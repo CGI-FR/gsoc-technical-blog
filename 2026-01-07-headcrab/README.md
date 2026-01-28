@@ -1,23 +1,3 @@
-* HeadCrab malware identification & extraction
-  * 1 - Identify the miners
-  * 2 - Are there other /proc/self/fd/ processes ?
-  * 3 - What it the common parent to these malicious processes ?
-  * 4 - Reassembling malware from memory dumps
-  * 5 - There is an associated service : ice9j.service
-  * 6 - Digressions on the capabilities of this malware
-    * 6.1 Targeted processes 
-    * 6.2 Process creation capabilities
-    * 6.3 Persistence mechanisms
-    * 6.4 Backdoor capabilities
-    * 6.5 Security features detection
-    * 6.6 Pulling the configuration out
-    * 6.7 Prying the configuration out
-  * 7 - The Redis component
-  * 8 - Forensics artifacts left by SELinux policies infractions for sshd calling SYSCALL=301/fanotify_mark
-  * Conclusion
-* IOC
-
-
 # HeadCrab malware identification & extraction
 
 ![fancy headcrab ansi art header from the malware, with colors!](./fancy-header.png)
@@ -40,6 +20,25 @@ Additionally, we extracted some easy-to-read content from the malicious sample w
 obtained, as the malware capabilities already have been documented by other
 security researchers in the past. In our case, we were not able to find evidence
 that this compromise had a Redis entry point, but Redis was present in the scope.
+
+* HeadCrab malware identification & extraction
+  * 1 - Identify the miners
+  * 2 - Are there other /proc/self/fd/ processes ?
+  * 3 - What it the common parent to these malicious processes ?
+  * 4 - Reassembling malware from memory dumps
+  * 5 - There is an associated service : ice9j.service
+  * 6 - Digressions on the capabilities of this malware
+    * 6.1 Targeted processes 
+    * 6.2 Process creation capabilities
+    * 6.3 Persistence mechanisms
+    * 6.4 Backdoor capabilities
+    * 6.5 Security features detection
+    * 6.6 Pulling the configuration out
+    * 6.7 Prying the configuration out
+  * 7 - The Redis component
+  * 8 - Forensics artifacts left by SELinux policies infractions for sshd calling SYSCALL=301/fanotify_mark
+  * Conclusion
+* IOC
 
 The event that started this research was somewhere, DNS queries towards `gulf.moneroocean.stream` triggered a detection
 rule because servers are not supposed to mine cryptocurrencies. We quickly

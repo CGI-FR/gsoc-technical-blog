@@ -1,7 +1,43 @@
 # APT malware reverse engineering and Incident Response on an Ivanti SSLVPN appliance 
 
 An Advanced Persistent Threat (APT) planted unique malware in an Internet-exposed Ivanti SSLVPN appliance using a 0-day vulnerability. Less than 24 hours after notification, the hard drive disks were being unscrewed from their drawers and then plugged in a special read-only forensics device for a deep review.
- 
+
+* 1 - Performing Incident Response on a vendor-locked appliance
+  * 1.1 - Limitations of the vendor-approved tools
+  * 1.2 Decrypting Ivanti server snapshots
+  * 1.3 Getting the physical hard drives
+  * 1.4 Mounting the EWF images with ewfmount
+  * 1.5 Accessing mountable partitions with losetup
+  * 1.6 Extracting the cryptographic keys out of the Linux kernel image
+  * 1.7 Decrypting the encrypted partitions
+  * 1.8 Parsing the Ivanti custom logs
+  * 1.9 Timelining proves useful once again
+  * 1.10 Conclusion of the Incident Response approaches and findings
+* 2 Reverse Engineering APT malware
+  * 2.1 dsmain (SPAWNSNARE) review
+    * 2.1.1 Reviewing strings always works
+    * 2.1.2 Function ordering proves useful once again
+    * 2.1.3 Hardcoded encryption keys
+    * 2.1.4 Conclusion of the dsmain review
+  * 2.2 libdsupgrade.so ( SPAWNCHIMERA ) review
+    * 2.2.1 Looking at .data and .rodata yields easy findings
+    * 2.2.2 Shell script capabilities
+    * 2.2.3 A look at decompiled hook functions
+    * 2.2.4 xor-in-loop is a valuable heuristic
+    * 2.2.5 x509 certificates are valuable findings
+    * 2.2.6 Unidentified binary special values
+    * 2.2.7 “Not all that shines is gold”, or cryptographers smuggle quotes in their code libraries
+    * 2.2.8 Strings are always worth a read
+    * 2.2.9 Calling arbitrary functions to extract embedded samples
+    * 2.2.10 Conclusion of the libdsupgrade.so review
+  * 2.3 liblogblock.so ( SPAWNSLOTH ) review
+    * 2.3.1 Reviewing strings always works
+    * 2.3.2 Classical binary layout proves useful once again
+    * 2.3.3 Conclusion of the liblogblock.so review
+  * 2.4 Conclusion of the reverse engineering exercise
+  * 3 - References
+
+
 ![Forensics data acquisition setup](image1.jpeg)
 _Forensics data acquisition setup_
 
