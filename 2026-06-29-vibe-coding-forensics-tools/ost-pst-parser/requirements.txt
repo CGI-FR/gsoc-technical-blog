@@ -1,0 +1,4 @@
+PySide6
+# Provides the importable "pypff" module for PST/OST files.
+# Do not install the unrelated PyPI package named "pypff".
+libpff-python
