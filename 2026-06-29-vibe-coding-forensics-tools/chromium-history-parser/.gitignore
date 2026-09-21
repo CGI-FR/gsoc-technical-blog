@@ -1,0 +1,10 @@
+.parser_check/
+.venv/
+History
+History-*
+chromium-history-*/
+chromium-history-*.snapshot*
+icon_history_[0-9]*.png
+__pycache__/
+*.pyc
+History*

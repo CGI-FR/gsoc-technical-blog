@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ost-pst-parser"
+dynamic = ["version"]
+description = "Outlook PST/OST and SQLite evidence viewer"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "GSOC" },
+]
+keywords = ["outlook", "pst", "ost", "sqlite", "forensics", "evidence"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "PySide6",
+    "libpff-python",
+]
+
+[project.scripts]
+outlook-reader = "ost_pst_parser.outlook_reader:main"
+mac-outlook-reader = "ost_pst_parser.mac_outlook_reader:main"
+
+[tool.setuptools]
+packages = ["ost_pst_parser"]
+
+[tool.setuptools.package-data]
+ost_pst_parser = ["cheese.ico", "cheese.svg"]
+
+[tool.setuptools.dynamic]
+version = { attr = "ost_pst_parser.__version__" }

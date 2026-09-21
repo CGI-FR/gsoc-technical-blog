@@ -22,6 +22,7 @@ Visit https://www.cgi.com/en/cybersecurity to know more about CGI cybersecurity 
 
 * [2025-08-01-ivanti-sslvpn : APT malware reverse engineering and Incident Response on an Ivanti SSLVPN appliance](./2025-08-01-ivanti-sslvpn/)
 * [2026-01-07-headcrab : HeadCrab malware discovery and extraction from Linux hosts](./2026-01-07-headcrab/)
+* [2026-06-29-vibe-coding-forensics-tools : Some feedback on vibe-coding tools](./2026-06-29-vibe-coding-forensics-tools/)
 
 
 ## Disclaimer
